@@ -12,8 +12,13 @@ class Product {
 
     final String partyId;
 
-    Product(String partyId) {
+    private Product(Money price, String name, String partyId) {
+        this.price = price;
+        this.name = name;
         this.partyId = partyId;
     }
 
+    static Product fromDraft(ProductDraft draft) {
+        return new Product(draft.price(), draft.name(), draft.partyId());
+    }
 }

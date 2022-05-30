@@ -10,8 +10,9 @@ public class ProductsRepository {
 
     private Map<String, Product> products = new HashMap<>();
 
-    void addProduct(Product product) {
+    Product addProduct(Product product) {
         products.put(product.id, product);
+        return product;
     }
 
     void removeProduct(Product product) {
